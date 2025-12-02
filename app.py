@@ -26,7 +26,7 @@ if 'images' not in st.session_state:
 # Configure Gemini API
 try:
     genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-    model = genai.GenerativeModel('gemini-2.5-flash')
+    model = genai.GenerativeModel('gemini-2.5-flash-latest')
 except Exception as e:
     st.error(f"Error configuring Gemini API: {e}")
     st.stop()
@@ -648,4 +648,3 @@ with st.sidebar:
         st.session_state.article_data = {}
         st.session_state.images = []
         st.rerun()
-
